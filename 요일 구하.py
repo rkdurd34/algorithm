@@ -31,4 +31,3 @@ if ALL % 7 == 6:
     print('wed')
 if ALL % 7 == 0:
     print('thu')
-    
