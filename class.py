@@ -188,4 +188,75 @@ a1.print_cnt()
 a2.print_cnt()
 a3.print_cnt()
 A.print_count()
-        
+
+
+class SalesWorker:
+    def __init__(self,name):
+        self.name = name
+    def work(self):
+        print(self.name,'sells something')
+class DevWorker:
+    def __init__(self,name):
+        self.name =name
+    def work(self):
+        print(self.name, "develops something")
+worker1 = SalesWorker('Dave')
+worker2 = SalesWorker('David')
+worker3 = SalesWorker('Andy')
+worker4 = DevWorker('Aiden')
+worker5 = DevWorker('Tina')
+worker6 = DevWorker('Anthony')
+
+workers = [worker1, worker2, worker3, worker4, worker5, worker6]
+for i in workers:
+    i.work()
+
+
+class Character(metaclass=ABCMeta):
+    def __init__(self,name):
+        self.name = name
+    @abstractmethod
+    def attack(self):
+        pass
+class Elf(Character):
+
+    def attack(self):
+        print("맘법으로 공격합니다")
+
+class Fighter(Character):
+    def attack(self):
+        print("주먹으로 공격합니다")
+fighter_1 = Fighter("figher_1")
+elf_1 = Elf("elf_1")
+fighter_1.attack()
+elf_1.attack()
+
+class Figure_3:
+    def __init__(self,width,height):
+        self.width = width
+        self.height = height
+class Quadrangle:
+    def __init__(self,width,height):
+        self.width = width
+        self.height= height
+    def __add__(self,second):
+        return Quadrangle(self.width + second.width,self.height +second.height)
+    def __getitem__(self,index):
+        if index == 0:
+            return self.width
+        elif index ==1:
+            return self.height
+    def __str__(self):
+        return f'width ;{self.width}, height{self.height}'
+
+rectangle1 = Quadrangle(2,3)
+figure1 = Figure_3(3,4)
+rectangle2 = rectangle1 + figure1
+print(rectangle2.width,rectangle2.height)
+
+rectangle_3 = Quadrangle(6,4)
+figure_2 = Figure_3(10,3)
+rectangle_4 =rectangle_3 + figure_2 
+# 위에 계산 할 때 앞뒤가바뀌면 안됨
+
+print(rectangle_4.width, rectangle_4.height)
