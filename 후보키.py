@@ -1,8 +1,10 @@
 relation = [["100","ryan","music","2"],
 ["200","apeach","math","2"],["300","tube","computer","3"],["400","con","computer","4"],["500","muzi","music","3"],["600","apeach","music","2"]]
 def solution(relation):
+    com_list = []
     for i in relation:
-        print(i[0])
+        com_list.append(i[0])
+    print(com_list)
     answer=""
     return answer
 solution(relation)
