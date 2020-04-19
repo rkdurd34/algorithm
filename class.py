@@ -260,3 +260,5 @@ rectangle_4 =rectangle_3 + figure_2
 # 위에 계산 할 때 앞뒤가바뀌면 안됨
 
 print(rectangle_4.width, rectangle_4.height)
+print(str(rectangle_4))
+print(rectangle_4[0], "__getitem__매서드 사용하는거 .... 와..")
