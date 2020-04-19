@@ -262,3 +262,54 @@ rectangle_4 =rectangle_3 + figure_2
 print(rectangle_4.width, rectangle_4.height)
 print(str(rectangle_4))
 print(rectangle_4[0], "__getitem__매서드 사용하는거 .... 와..")
+print("is와 ==의 차이는 객체 자체가 같냐와 객체의 결과값이 같냐의 문제!")
+class Calc_3:
+    def __init__(self,x,y):
+        self.x =x
+        self.y =y
+    def add(self):
+        return self.x + self.y
+    def multiply(self):
+        print('이거 까지 가져와야댐')
+        print(self.x, self.y)
+        return self.x * self.y
+class Calc_1:
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+        self.calc2 = Calc_3(x,y)
+    def add(self):
+        return self.x +self.y
+    def subtract(self):
+        return self.x - self.y
+    def multiply(self):
+        print("이거 가져오고")
+        print(self.x , self.y)
+        return self.calc2.multiply()
+# 다른 클래스 에서 원하는 매서드만 가져올떄 쓰는 방법!
+abc = Calc_1(1,3)
+print(abc.multiply())
+
+class Rectangle:
+    def __init__(self,width,height):
+        self.width= width
+        self.height = height
+    def area(self):
+        return self.width * self.height
+class Circle :
+    def __init__(self,radius):
+        self.radius = radius
+    def area(self):
+        return 3.14 * self.radius**2
+class AreaCalculator:
+    def __init__(self,shapes):
+        self.shapes = shapes
+    def total_area(self):
+        total = 0
+        for shape in self.shapes:
+            total += shape.area()
+            return total
+
+shapes = [Rectangle(1, 6), Rectangle(2, 3), Circle(5), Circle(7)]
+calculator = AreaCalculator(shapes)
+print("총", calculator.total_area())
