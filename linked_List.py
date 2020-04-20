@@ -71,36 +71,80 @@ class  Node:
     def __init__(self,data,next=None):
         self.data = data
         self.next = next
-def add(data):
-    node = head
-    while node.next:
-        node = node.next
-    node.next = Node(data)
+class  NodeMgmt:
+    def __init__(self,data):
+        self.head = Node(data)
+    def add(self,data):
+        if self.head =='':
+            self.head = Node(data)
+        else:
+            print("add ㅅ;작", data,"번쨰")
+            node = self.head
+            while  node.next:
+                node = node.next
+            node.next = Node(data)
+    def desc(self):
+        node = self.head
+        while node:
+            print(node.data)
+            node = node.next
+
+    def delete(self,data):
+        if self.head =='':
+            print('해당 값을 가진 노드가 없습니다.')
+            return
+        if  self.head.data == data:
+            temp =  self.head
+            self.head = self.head.next
+            del temp
+        else:
+            node = self.head
+            while node.next:
+                if node.next.data == data:
+                    temp = node.next
+                    node.next = node.next.next
+                    del temp
+                    return
+                else:
+                    node = node.next
+    def search_node(self,data):
+        node=self.head
+        while node:
+            if node.data == data:
+                return node
+            else:
+                node = node.next
 
 
-node1 = Node(1)     
-head = node1
+linked_list1 = NodeMgmt(0)
+linked_list1.desc()
+for data in range(1,10):
+    linked_list1.add(data)
+linked_list1.desc()
 
-for i in range(2,10):
-    add(i)
-node3 =  Node(1.5)
-node =head
+# node1 = Node(1)     
+# head = node1
+
+# for i in range(2,10):
+#     add(i)
+# node3 =  Node(1.5)
+# node =head
+# # while node.next!=None:
+# #     node = node.next
+# search = True
+# while search:
+#     if node.data ==4 :
+#         search = False
+#     else:
+#         node = node.next
+# node_next =  node.next
+# node.next =node3
+# node3.next = node_next
+
+# node =head
 # while node.next!=None:
+#     print(node.data)
 #     node = node.next
-search = True
-while search:
-    if node.data ==4 :
-        search = False
-    else:
-        node = node.next
-node_next =  node.next
-node.next =node3
-node3.next = node_next
-
-node =head
-while node.next!=None:
-    print(node.data)
-    node = node.next
-print(node.data)
+# print(node.data)
     
 
