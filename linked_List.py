@@ -66,36 +66,29 @@
 # print(Node.count)
 
 # print('여기서 시작')
-
-class  Node:
+class Node:
     def __init__(self,data,next=None):
         self.data = data
         self.next = next
-class  NodeMgmt:
+class NodeMgmt:
     def __init__(self,data):
         self.head = Node(data)
+
     def add(self,data):
-        if self.head =='':
+        if self.head == "":
             self.head = Node(data)
         else:
-            print("add ㅅ;작", data,"번쨰")
             node = self.head
-            while  node.next:
+            while node.next:
                 node = node.next
             node.next = Node(data)
-    def desc(self):
-        node = self.head
-        while node:
-            print(node.data)
-            node = node.next
-
     def delete(self,data):
-        if self.head =='':
-            print('해당 값을 가진 노드가 없습니다.')
+        if self.head =="":
+            print("해당 값을 가진 노드가 없습니다")
             return
-        if  self.head.data == data:
-            temp =  self.head
-            self.head = self.head.next
+        if self.head.data == data:
+            temp = self.head
+            self.head = self.head.next 
             del temp
         else:
             node = self.head
@@ -104,23 +97,92 @@ class  NodeMgmt:
                     temp = node.next
                     node.next = node.next.next
                     del temp
+                    print('wldna')
                     return
                 else:
                     node = node.next
     def search_node(self,data):
-        node=self.head
-        while node:
-            if node.data == data:
-                return node
-            else:
+        node = self.head
+        if node == "":
+            print('리스트가 비어있습니다')
+        else:
+            while node:
+                if node.data == data:
+                    return print(node.next.data)
                 node = node.next
 
+    def desc(self):
+        node = self.head
+        while node:
+            print(node.data)
+            node = node.next
+linked_list_3 = NodeMgmt(0)
+for i in range(1,10):
+    linked_list_3.add(i)
+linked_list_3.delete(9)
+linked_list_3.desc()
+linked_list_3.search_node(4)
 
-linked_list1 = NodeMgmt(0)
-linked_list1.desc()
-for data in range(1,10):
-    linked_list1.add(data)
-linked_list1.desc()
+
+
+
+
+
+    
+# class  Node:
+#     def __init__(self,data,next=None):
+#         self.data = data
+#         self.next = next
+# class  NodeMgmt:
+#     def __init__(self,data):
+#         self.head = Node(data)
+#     def add(self,data):
+#         if self.head =='':
+#             self.head = Node(data)
+#         else:
+#             print("add ㅅ;작", data,"번쨰")
+#             node = self.head
+#             while  node.next:
+#                 node = node.next
+#             node.next = Node(data)
+#     def desc(self):
+#         node = self.head
+#         while node:
+#             print(node.data)
+#             node = node.next
+
+#     def delete(self,data):
+#         if self.head =='':
+#             print('해당 값을 가진 노드가 없습니다.')
+#             return
+#         if  self.head.data == data:
+#             temp =  self.head
+#             self.head = self.head.next
+#             del temp
+#         else:
+#             node = self.head
+#             while node.next:
+#                 if node.next.data == data:
+#                     temp = node.next
+#                     node.next = node.next.next
+#                     del temp
+#                     return
+#                 else:
+#                     node = node.next
+#     def search_node(self,data):
+#         node=self.head
+#         while node:
+#             if node.data == data:
+#                 return node
+#             else:
+#                 node = node.next
+
+
+# linked_list1 = NodeMgmt(0)
+# linked_list1.desc()
+# for data in range(1,10):
+#     linked_list1.add(data)
+# linked_list1.desc()
 
 # node1 = Node(1)     
 # head = node1
