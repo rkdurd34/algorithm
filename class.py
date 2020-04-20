@@ -260,7 +260,7 @@ rectangle_4 =rectangle_3 + figure_2
 # 위에 계산 할 때 앞뒤가바뀌면 안됨
 
 print(rectangle_4.width, rectangle_4.height)
-print(str(rectangle_4))
+print(rectangle_4)
 print(rectangle_4[0], "__getitem__매서드 사용하는거 .... 와..")
 print("is와 ==의 차이는 객체 자체가 같냐와 객체의 결과값이 같냐의 문제!")
 class Calc_3:
