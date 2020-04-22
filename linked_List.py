@@ -123,6 +123,8 @@ linked_list_3.delete(9)
 linked_list_3.desc()
 linked_list_3.search_node(4)
 
+print()
+print('Double_linked_list 시작')
 class Node:
 
     def __init__(self,data,prev=None, next=None):
@@ -131,3 +133,115 @@ class Node:
         self.data =data
         self.next = next
 class NodeMgmt:
+    def __init__(self,data):
+        self.head = Node(data)
+        self.tail = self.head
+    def insert(self,data):
+        if self.head == None:
+            self.head =Node(data)
+            self.tail = self.head
+            return
+        else:
+            node = self.head
+            while node.next:
+                node = node.next
+            new = Node(data)
+            node.next = new
+            new.prev = node
+            self.tail = new
+    def desc(self):
+        node = self.head
+        while node:
+            print(node.data)
+            node = node.next
+    def search_from_head(self,data):
+        if self.head == None:
+            return False
+        else:
+            node = self.head
+            while node:
+                if node.data == data:
+                    return node
+                else:
+                    node= node.next
+    def insert_after_kang(self,data,after_data):
+        print('tl')
+        if self.head == None:
+            self.head = Node(data)
+            self.tail = self.head
+            return
+        else:
+            node = self.head
+            while node:
+                if after_data == node.data:
+                    if node == self.tail:
+                        print('tail case')
+                        new = Node(data)
+                        node.next = new
+                        new.prev = node
+                        return
+                    else:
+                        print('rest')
+                        new = Node(data)
+                        new.prev = node
+                        new.next = node.next
+                        node.next.prev = new
+                        node.next = new
+                        return
+                node = node.next
+    def insert_after(self,data,after_data):
+        if self.head ==None:
+            self.head = Node(data)
+            self.tail = self.head
+        else:
+            node = self.head
+            while after_data != node.data:
+                node =node.next
+                if node == None:
+                    return False
+            new = Node(data)
+            new.prev = node
+            new.next = node.next
+            node.next =new
+            node.next.prev = new
+
+
+
+    def insert_before(self, data ,before_data):
+            node = self.tail
+            while before_data  != node.data:
+                node = node.next
+                if before_data !=self.tail.data:
+                    return False
+            new = Node(data)
+            new.prev = node
+
+
+
+double_linked_list1= NodeMgmt(1)
+for i in range(2,10):
+    double_linked_list1.insert(i)
+double_linked_list1.desc()
+print()
+double_linked_list1.insert_after(3,2)
+
+double_linked_list1.desc()
+
+
+                    
+
+
+
+                    
+
+                
+        
+
+
+                
+            
+
+
+
+        
+
