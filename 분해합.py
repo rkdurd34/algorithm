@@ -1,33 +1,63 @@
-# x = int(input())
-# c =list()
-# for i in range(x,0-1,-1):
-#     a = str(i)
-#     z = i
-#     for j in range(len(a)):
-#         z += int(a[j])
-#     if z == x :
-#         c.append(i)
+x = int(input())
+c =list()
+for i in range(x,0-1,-1):
+    a = str(i)
+    z = i
+    for j in range(len(a)):
+        z += int(a[j])
+    if z == x :
+        c.append(i)
 
-# if c:
-#     print(c[-1])
-# else:
-#     print(0)
+if c:
+    print(c[-1])
+else:
+    print(0)
 
 
-# x = int(input())
-# c =list()
-# for i in range(x):
-#     a = str(i)
-#     z = i
-#     for j in range(len(a)):
-#         z += int(a[j])
-#     if z == x :
-#         c.append(i)
 
-# if c:
-#     print(c[0])
-# else:
-#     print(0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+x = int(input())
+c =list()
+for i in range(x):
+    a = str(i)
+    z = i
+    for j in range(len(a)):
+        z += int(a[j])
+    if z == x :
+        c.append(i)
+if c:
+    print(c[0])
+else:
+    print(0)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # num = 216
 
