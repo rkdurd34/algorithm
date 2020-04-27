@@ -74,7 +74,7 @@ else:
 num = 216
 answer = 0
 for i in range(1,num):
-    x = map(int,str(i))
+    x = list(map(int,str(i)))
     # print("sum(x)값 : ", sum(x), f'i값 : {i}')    
     
     y = sum(x) +i
