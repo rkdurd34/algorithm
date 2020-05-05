@@ -61,9 +61,9 @@ def  solve(depth, N,M):
         if  visited[i] == False:
             visited[i] = True
             out.append(i+1)
-            print(visited, out, i)
+            # print(visited, out, i)
             solve(depth+1,N,M)
-            print(visited, out, i , "재귀 이후")
+            # print(visited, out, i , "재귀 이후")
             visited[i] = False
             out.pop()
         

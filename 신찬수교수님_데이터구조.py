@@ -11,6 +11,7 @@
 #     print("*"*(i+1))
 
 
+
 # def fib(n):
 #     if n ==0:
 #         return 0
@@ -47,7 +48,6 @@ def quick(num_list):
         return num_list
     if len(num_list)==0:
         return []
-    
     mid_num = num_list[0]
     small = []
     big = []
@@ -55,7 +55,7 @@ def quick(num_list):
     for i in num_list:
         if i > mid_num:
             big.append(i)
-        if i < mid_num:
+        if i < mid_num:ß
             small.append(i)
         if i == mid_num:
             m.append(i)
