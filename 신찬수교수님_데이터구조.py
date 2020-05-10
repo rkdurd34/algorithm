@@ -48,21 +48,22 @@ def quick(num_list):
         return num_list
     if len(num_list)==0:
         return []
-    mid_num = num_list[0]
+    mid_num = num_list[int(len(num_list)/2)]
     small = []
     big = []
     m = []
     for i in num_list:
         if i > mid_num:
             big.append(i)
-        if i < mid_num:ß
+        if i < mid_num:
             small.append(i)
         if i == mid_num:
             m.append(i)
-    print(small, big)
-    return quick(small) + [m] + quick(big)
+    print(small, big, m)
+    return quick(small) +m + quick(big)
     
 
 x = [1,3,2,6,6,3,10,23,123]
 
 print(quick(x))
+
