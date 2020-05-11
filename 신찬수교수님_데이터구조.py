@@ -67,3 +67,40 @@ x = [1,3,2,6,6,3,10,23,123]
 
 print(quick(x))
 
+group = ['A', 'B', 'C', 'D', 'E', 'F']
+name = ['가영', '나은', '다희', '라율']
+
+all_list = [group[0],list(name[:2]),group[1],list(name[2:4])]
+
+arr = [10, 3, -62, 1, 82, 55, -48, 63, 47, -63, 93, 92 ]
+p = arr[0]
+L , M , R = [],[],[]
+print(p)
+for x in arr:
+   if x < p:
+       L.append(x)
+   elif x > p:
+       R.append(x)
+   else:
+       M.append(x)
+print(id(L),id(M),id(R))
+a = 1
+b = a
+a = 2
+print(a,b)
+
+class Person:
+    def __init__(self,name):
+        self.name = name
+def changeName(person):
+    person = Person('galid')
+    
+
+def changeName_1(person):
+    person.name = 'galid'
+
+p1 = Person('jjy')
+changeName(p1)
+print(p1.name)
+changeName_1(p1)
+print(p1.name)
