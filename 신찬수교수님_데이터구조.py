@@ -88,7 +88,11 @@ a = 1
 b = a
 a = 2
 print(a,b)
-
+c =d= [1,2,3,4]
+d.append([5,6,7,8])
+print(c,d)
+d = [12,3,4]
+print(c,d)
 class Person:
     def __init__(self,name):
         self.name = name
