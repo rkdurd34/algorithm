@@ -94,16 +94,17 @@ print(c,d)
 d = [12,3,4]
 print(c,d)
 class Person:
-    def __init__(self,name):
-        self.name = name
+    name='gdsssss'
+    # def __init__(self):
+        # self.name = name
 def changeName(person):
-    person = Person('galid')
+    person = Person(  )
     
 
 def changeName_1(person):
     person.name = 'galid'
 
-p1 = Person('jjy')
+p1 = Person()
 changeName(p1)
 print(p1.name)
 changeName_1(p1)
