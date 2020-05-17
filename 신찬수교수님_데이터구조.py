@@ -109,3 +109,10 @@ changeName(p1)
 print(p1.name)
 changeName_1(p1)
 print(p1.name)
+
+num_list = [1,2,3,4,5,6,7,8,9,10]
+num_list[:-1] = 'prime number'
+print(num_list)
+num_list[4] = [80]
+num_list[4:6] = 'kang'
+print(num_list)
