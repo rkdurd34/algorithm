@@ -2,15 +2,15 @@ num = int(input())
 dot_case = []
 for i in range(num):
     dot_case.append(list(map(int,input().split())))
-    print(dot_case)
-    a = input()
-    # dot_list = a.split(' ')
-    # dot_case.append(dot_list)
+    # input을 받아서 이중리스트로 dot_case 채워주기
 dot_case_sort = sorted(dot_case, key = lambda x: (x[0], x[1]) )
+# sorted와 lambda 식을 사용하여 정렬!
 for [i,j] in dot_case_sort:
-    # for 문 돌릴 때 리스트 형식으로 포문 돌릴 수 있다!!!! 대박
+    
     print(i,j)
+    # for 문 돌릴 때 리스트 형식으로 포문 돌릴 수 있다
 
+# 여기서부터는 lambda와 sorted 사용하는방법
 # a = [(1, 2), (0, 1), (5, 1), (5, 2), (3, 0)]
 
 # # 인자없이 그냥 sorted()만 쓰면, 리스트 아이템의 각 요소 순서대로 정렬을 한다.
@@ -40,4 +40,4 @@ for [i,j] in dot_case_sort:
 
 
 
-# 출처: https://dailyheumsi.tistory.com/67 [하나씩 점을 찍어 나가며]
+

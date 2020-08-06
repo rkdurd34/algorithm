@@ -116,3 +116,43 @@ print(num_list)
 num_list[4] = [80]
 num_list[4:6] = 'kang'
 print(num_list)
+
+
+fruits = ['apple', 'banana', 'kiwi', 'peach', 'watermelon']
+# fruits.append(['watermelon'])
+fruits.extend(['watermelon'])
+print(fruits)
+
+answer = input()
+total_score = 0
+count = 0
+for i in range(len(answer)):
+    if i == 0:
+        if answer[0]=="O":
+            count+=1
+            total_score+=1
+    else:
+        if answer[i]=="O":
+            count+=1
+            total_score +=count
+            # if answer[i-1]=="O":
+            #     count+=1
+            #     total_score+=count
+            # else:
+            #     count +=1
+            #     total_score+=count
+        else:
+            count=0
+            
+print(total_score)
+quick_select(L, k): # L에 􏱋는 수 􏰠에서 k번􏲜로 􏱇􏰩 수 리􏲝 p=L[0] #pivot
+A = B = M = []
+M.append(p)
+for i in range(1, |L|): # 분류: 비교 􏲞수는?
+if L[i] < p: A.append(L[i]) elif L[i] > p: B.append(L[i]) else: M.append(L[i])
+# 􏰸귀 􏲅􏰰 􏲂비
+if |A| > k: # 그림에서􏰛 (1)
+return quick_select(A, k)
+elif |A|+|M| < k: # 그림에서􏰛 (2)
+return quick_select(B, k-|A|-|M|) else:
+return p
