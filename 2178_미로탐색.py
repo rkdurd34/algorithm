@@ -14,7 +14,6 @@ def BFS(start_node,graph):
     visited, need_visit = list(), list()
     need_visit.append(start_node)
     all_list[1][1] = 0
-    
     while need_visit :
         temp_list = []
         for i in need_visit:
@@ -37,7 +36,7 @@ def BFS(start_node,graph):
             if i == [row,col]:
                 print(count)
                 return
-        # need_visit.extend(temp_list)
+
         need_visit = temp_list
         count +=1
     return count
