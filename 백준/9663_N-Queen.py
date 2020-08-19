@@ -5,15 +5,14 @@ for i in range(num+2):
     if i == 0 or i == num+1:
         all_list.append([False]*(num+2))
     else:
-        all_list.append(0*(num+2))
-
+        all_list.append([0]*(num+2))
+print(all_list)
 num_list =[False]+([False]*num)
 location = 0
 count = 0
 def DFS(distance, num_list, location):
     print(num_list,distance,location)
     if distance == 0:
-        print('first')
         for i in range(1,len(num_list)):
             if num_list[i]==False:
                 prev_location = location
@@ -25,7 +24,7 @@ def DFS(distance, num_list, location):
                 num_list[i]=False
                 location = prev_location
                 
-    if distance == num-1:
+    if distance == num:
         global count
         count+=1
         print(f'끝까지 감{count}')
