@@ -1,5 +1,6 @@
 import sys
 import heapq
+sys.setrecursionlimit(100000000)
 test_case = int(sys.stdin.readline())
 final_list = []
 for _ in range(test_case):
@@ -36,7 +37,7 @@ for _ in range(test_case):
         for i in cand_list:
             check_list = [i]
             check_start = start
-            check_end = i
+            check_end = i 
             while check_end != check_start:
                 check_end = distances[check_end][1]
                 check_list.append(check_end)
