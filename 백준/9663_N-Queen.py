@@ -1,6 +1,8 @@
+
+
 import sys
 num = int(sys.stdin.readline())
-result_list = []
+result = 0
 def is_available(check_list, column):
     current_row = len(check_list)
     for checking_row in range(current_row):
@@ -10,8 +12,8 @@ def is_available(check_list, column):
 def DFS(num,depth,check_list):
     
     if num == depth:
-        check_list_1 = list(check_list)
-        result_list.append(check_list_1)
+        global result
+        result+=1
         return
     else:
         for column in range(num):
@@ -23,7 +25,7 @@ def DFS(num,depth,check_list):
 
 
 DFS(num,0,[])
-print(len(result_list))
+print(result)
 
 
 # all_list = []

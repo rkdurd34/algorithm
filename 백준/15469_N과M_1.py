@@ -1,25 +1,25 @@
 
-# def f (n,m,k):
-#     if n==k:
-#         print(*res)
-#         return
-#     else:
-#         for i in range(m):
-#             if visited[i]==0:
-#                 visited[i]=1
-#                 res[n] = arr[i]
-#                 print(visited)
-#                 f(n+1,m,k)
-#                 visited[i]=0
+def f (n,m,k):
+    if n==k:
+        print(*res)
+        return
+    else:
+        for i in range(m):
+            if visited[i]==0:
+                visited[i]=1
+                res[n] = arr[i]
+                print(visited)
+                f(n+1,m,k)
+                visited[i]=0
 
-# a,b = map(int,input().split())
+a,b = map(int,input().split())
 
-# arr = range(1,a+1)
-# res =[0]*b
-# visited = [0 for i in range(a)]
-# # print(arr, res ,visited)
-# # print(arr[0],arr[1],arr[3])
-# f(0,a,b)
+arr = range(1,a+1)
+res =[0]*b
+visited = [0 for i in range(a)]
+# print(arr, res ,visited)
+# print(arr[0],arr[1],arr[3])
+f(0,a,b)
 
 
 
