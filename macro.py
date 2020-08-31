@@ -3,9 +3,10 @@ import time
 from selenium.webdriver.common.alert import Alert
 # 1. 다른 컴퓨터에서 매크로 돌릴 시 크롬 드라이버 다운 받은 뒤 경로 수정, 다수 아이디 사용시 아이디,비번 변경
 # 2. 예비 수강신청에서 실제 수강 신청으로 홈페이지 주소 바꾸기
-# 
+print('asda')
 driver = webdriver.Chrome('/Users/kang/Downloads/chromedriver')
 driver.implicitly_wait(0.05)
+print('asdasd')
 
 # driver.get("http://builder.hufs.ac.kr/user/hufs/basket_intro/basket.html")
 # sugang_button = driver.find_element_by_xpath("//*[@id='content']/div[2]/div[1]/a/div")
