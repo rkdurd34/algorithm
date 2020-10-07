@@ -18,18 +18,24 @@
 # c=86000000000.0
 
 # print(b/c)
-clothes = [["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]]
+def find(list1,dict1, nowIndex, endpoint, answer):
+    temp = 0
+    if nowIndex == endpoint:
+        return answer
+    elif len(list1) < endpoint-nowIndex:
+        return 0
+    for i in range(len(list1)):
+        temp+=find(list1[i+1:],dict1,nowIndex+1,endpoint,answer*dict1[list1[i]])
+    return temp
 
+from collections import defaultdict
 def solution(clothes):
-    check_dict = dict()
-    for i in clothes:
-        try:
-            check_dict[i[1]].append(i[0])
-        except:
-            check_dict[i[1]] = list()
-            check_dict[i[1]].append(i[0])
-        
-        
-    return check_dict
-
-print(solution(clothes))
+    set1,cnt,dict1 = set(),0, defaultdict(int)
+    answer = 0
+    for x,y in clothes:
+        dict1[y]+=1
+        set1.add(y)
+        list1= list(set1)
+    for i in range(len(list1)):
+        answer += find(list1,dict1,0,i+1,1)
+    return answer
