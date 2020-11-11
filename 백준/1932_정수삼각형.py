@@ -20,3 +20,16 @@ print(max(num_list[-1]))
 
         
         
+
+ 
+
+
+
+#         if num_list[i+1][j] > num_list[i+1][j+1]:
+#             count += num_list[i+1][j]
+#             print(count)
+#         else:
+#             count+=num_list[i+1][j+1]
+
+
+# print(num_list)

@@ -1,5 +1,6 @@
 
 
+
 import sys
 num = int(sys.stdin.readline())
 result = 0
@@ -14,7 +15,7 @@ def DFS(num,depth,check_list):
     if num == depth:
         global result
         result+=1
-        returnㄹ
+        return
     else:
         for column in range(num):
             if is_available(check_list, column):
@@ -28,6 +29,11 @@ DFS(num,0,[])
 print(result)
 
 
+
+
+
+# import sys
+# num = int(sys.stdin.readline())
 # all_list = []
 # for i in range(num+2):
 #     if i == 0 or i == num+1:
