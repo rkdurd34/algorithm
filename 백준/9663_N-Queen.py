@@ -14,7 +14,7 @@ def DFS(num,depth,check_list):
     if num == depth:
         global result
         result+=1
-        return
+        returnㄹ
     else:
         for column in range(num):
             if is_available(check_list, column):
