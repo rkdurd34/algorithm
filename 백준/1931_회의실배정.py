@@ -13,6 +13,7 @@ search_finished = True
 count = 0
 order = 0
 while search_finished:
+    
     if order ==0:
         temp_pivot = min(finish_list)
         pivot_index = finish_list.index(temp_pivot)
@@ -20,6 +21,7 @@ while search_finished:
         count +=1
         order+=1
     else:
+        print(temp_pivot)
         if temp_pivot > max(start_list):
             print(count)
             search_finished = False
