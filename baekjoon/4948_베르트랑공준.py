@@ -4,15 +4,14 @@ import sys
 def sol(n):
     if n == 1:
         return 1
-    check = [True] * (2*n)
-    m = int(n ** 0.5)
-    for i in range(2, m):
-        if i % 
-        if check[i-1] == True:
-            for j in range(i+1, n, i):
+    check = [True] * (2 * n + 1)
+    m = int((2 * n) ** 0.5)
+    for i in range(2, m+1):
+        if check[i] == True:
+            for j in range(i+i, 2*n, i):
                 check[j] = False
-
-    return check.count(True) - 2
+    # print(check, check[n+1:2*n].count(True))
+    return check[n+1:2*n].count(True)
 
 
 while 1:
@@ -20,7 +19,7 @@ while 1:
     if a == 0:
         break
     else:
-        print(prime_list(a))
+        print(sol(a))
 
 # # check = []
 # a = 1

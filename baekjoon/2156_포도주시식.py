@@ -1,4 +1,4 @@
-import sys
+frimport sys
 num = int(sys.stdin.readline())
 result_list = [0,0,0]+([0]*num)
 check_list = [0,0,0]
