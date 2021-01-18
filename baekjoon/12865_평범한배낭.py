@@ -128,3 +128,4 @@ print(check_list[num][amount])
 # # for i in prac:
 # #     for j in range(i,len(prac)):
 # #         print(i,prac[j])
+
