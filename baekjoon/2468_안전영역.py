@@ -1,7 +1,4 @@
 import sys
-row = int(sys.stdin.readline())
-board = [list(map(int, sys.stdin.readline().split())) for _ in range(row)]
-check = [[False for _ in range(row)] for _ in range(row)]
 
 
 def sol(height, board, row):
@@ -16,7 +13,6 @@ def sol(height, board, row):
                 need_visit.append([j, k])
                 temp_check[j][k] = True
                 while need_visit:
-
                     temp = need_visit.pop()
                     for z in range(len(dx)):
                         x = temp[0] + dx[z]
@@ -28,6 +24,9 @@ def sol(height, board, row):
                 count += 1
     return count
 
+
+row = int(sys.stdin.readline())
+board = [list(map(int, sys.stdin.readline().split())) for _ in range(row)]
 
 result = 1
 for height in range(1, 101):

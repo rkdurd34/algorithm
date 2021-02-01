@@ -1,10 +1,5 @@
 import sys
 row = int(sys.stdin.readline())
-board = []
-for i in range(row):
-    board.append(list(map(int, sys.stdin.readline().split())))
-board = [list(board)]
-result = [0, 0, 0]
 
 
 def sol(temp):
@@ -31,7 +26,12 @@ def divide(temp):
     return temp_board
 
 
-start = row
+board = []
+for i in range(row):
+    board.append(list(map(int, sys.stdin.readline().split())))
+board = [list(board)]
+result = [0, 0, 0]
+
 while board:
     temp = board.pop()
     if sol(temp) == False:
