@@ -44,6 +44,7 @@ def ind_check(board, check, temp, stat):
 
 
 # 가로 : 0, 세로: 1, 대각: 2
+# 항상 생각해두기 bfs같은 문제더라도 왔던 길 돌아가지 않으면 DP로 풀 수 있음
 
 for i in range(row):
     for j in range(row):
