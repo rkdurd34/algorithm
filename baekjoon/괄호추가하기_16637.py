@@ -2,31 +2,11 @@ import sys
 length = int(sys.stdin.readline())
 board = "+" + sys.stdin.readline().strip()
 board += "+0"
-check = [{(int(board[1]), 0)}]
-for _ in range(length//2):
+check = [{(0, int(board[1]))}]
+for _ in range(length//2 + 1):
     check.append(set())
-check.append(set())
-# dx = []
-# for i in range(len(check)-1):
-#     for j in check[i]:
-#         temp_index = 2 * i + 1
-#         if j[1] != -1:
-#             check[i+1].append([j[0],board[temp_index+1],board[temp_index]])
-# print(check)
-# print(board)
+
 dx = ["+", "-", "*"]
-# end = len(board)
-# index = 1
-
-
-def sol(a, b, koo):
-    if koo == 0:
-        return a+b
-    if koo == 1:
-        return a-b
-    if koo == 2:
-        return a*b
-
 
 for i in range(len(check)-1):
     temp_index = 2 * i + 1+1
@@ -58,7 +38,7 @@ for i in range(len(check)-1):
                     check[i+1].add((j[0]*(j[1]-int(board[temp_index+1])), -1))
                 if dx.index(board[temp_index]) == 2:
                     check[i+1].add((j[0]*(j[1]*int(board[temp_index+1])), -1))
-print(check)
+# print(check)
 # print(max(check[-1]))
 # print(max(check[-1])[0])
 # a = sorted(check[-1], key=lambda x: (x[0], x[1]))
