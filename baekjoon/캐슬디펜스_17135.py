@@ -10,22 +10,16 @@ check_list = list(combinations([i for i in range(M)], 3))
 
 
 def sol(case, i, temp_board, D, M, check, attack_count):
-    # print(temp_board)
-    # attack_count = set()
     for j in range(D):
         if i - j >= 0:
             for k in range(M):
                 if temp_board[i-j][k] == 1:
-                    # print(i-j, k)
-                    # attack_or_not = 0
                     for t in case:
                         start = [N, t]
                         end = [N-j-1, k]
                         temp_distance = abs(
                             start[0]-end[0]) + abs(start[1]-end[1])
-                        # print(start, end, temp_distance, check)
                         if check[t][0] >= temp_distance and temp_distance <= D:
-
                             if check[t][1] == 0:
                                 check[t][1] = [i-j, k]
                                 check[t][0] = temp_distance
@@ -36,18 +30,6 @@ def sol(case, i, temp_board, D, M, check, attack_count):
                                 elif check[t][0] > temp_distance:
                                     check[t][1] = [i-j, k]
                                     check[t][0] = temp_distance
-
-                            # if attack_or_not == 0:
-                            # attack_or_not = 1
-                            # print(check, attack_count, temp_distance, t)
-                    # if attack_or_not != 0:
-                        # temp_board[i-j][k] = 0
-                        # attack_count.add()
-                        # attack_count += 1
-                # if attack_count == 3:
-                    # print(temp_board)
-                    # return attack_count
-    # print(temp_board)
     return attack_count
 
 
@@ -57,19 +39,13 @@ for case in check_list:
     temp_kill_count = 0
     for i in range(N-1, -1, -1):
         check = [[float('inf'), 0] for _ in range(M)]
-        temp_kill_count += sol(case, i, temp_board,
-                               D, M, check, 0)
+        sol(case, i, temp_board, D, M, check, 0)
         for a in check:
-            # print(a)
             b = a[1]
-            # print(b, temp_board)
             if b != 0:
                 if temp_board[b[0]][b[1]] == 1:
                     temp_board[b[0]][b[1]] = 0
                     temp_kill_count += 1
-
-    #     print(check, case, temp_kill_count)
-    # print(temp_kill_count, case)
 
     if attack_count < temp_kill_count:
         attack_count = temp_kill_count
