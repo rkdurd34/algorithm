@@ -1,4 +1,6 @@
 import sys
+
+
 def dfs(depth, start, end, result):
     if start == end:
         return depth
@@ -9,6 +11,7 @@ def dfs(depth, start, end, result):
             result = dfs(depth+1, i, end, result)
             check[i-1] = False
     return result
+
 
 people_num = int(sys.stdin.readline())
 start, end = list(map(int, sys.stdin.readline().split()))
