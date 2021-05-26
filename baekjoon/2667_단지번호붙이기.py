@@ -1,48 +1,62 @@
 import sys
-temp_count = 0
-num_input = int(sys.stdin.readline())
-all_list = []
-for i in range(num_input):
-    all_list.append(list(sys.stdin.readline().strip()))
+n = int(sys.stdin.readline())
+board = []
+check = []
+for i in range(n):
+    board.append(sys.stdin.readline().strip())
+    check.append([False] * n)
+print(board)
 
-result_list = []
-for row_index in range(len(all_list)):
-    for column_index in range(len(all_list[row_index])):
-        if all_list[row_index][column_index] == "1":
-            result_list.append((row_index,column_index))
+dx = [0,0,-1,1]
+dy = [1,-1,0,0]
 
-temp_count = 0
-def dir_search(temp):
-    global temp_count
-    temp_count+=1
-    if (temp[0]-1,temp[1]) in result_list:
-        result_list.remove((temp[0]-1,temp[1]))
-        dir_search((temp[0]-1,temp[1]))
-    if (temp[0],temp[1]-1) in result_list:
-        result_list.remove((temp[0],temp[1]-1))
-        dir_search((temp[0],temp[1]-1))
-    if (temp[0]+1,temp[1]) in result_list:
-        result_list.remove((temp[0]+1,temp[1]))
-        dir_search((temp[0]+1,temp[1]))    
-    if (temp[0],temp[1]+1) in result_list:
-        result_list.remove((temp[0],temp[1]+1))
-        dir_search((temp[0],temp[1]+1))
-    else:     
-        return
-final_list = []
-final_count = 0
-while len(result_list)>0:
-    temp = result_list.pop(0)
-    dir_search(temp)
-    final_count+=1
-    final_list.append(temp_count)
-    temp_count = 0
-print(final_count)
-for i in sorted(final_list):
-    print(i)
+need_visit = []
 
+for i in range(len(board)):
+    for j in range(len(board[i])):
+        print(board[i][j])
+# import sys
+# temp_count = 0
+# num_input = int(sys.stdin.readline())
+# all_list = []
+# for i in range(num_input):
+#     all_list.append(list(sys.stdin.readline().strip()))
 
+# result_list = []
+# for row_index in range(len(all_list)):
+#     for column_index in range(len(all_list[row_index])):
+#         if all_list[row_index][column_index] == "1":
+#             result_list.append((row_index,column_index))
 
+# temp_count = 0
+# def dir_search(temp):
+#     global temp_count
+#     temp_count+=1
+#     if (temp[0]-1,temp[1]) in result_list:
+#         result_list.remove((temp[0]-1,temp[1]))
+#         dir_search((temp[0]-1,temp[1]))
+#     if (temp[0],temp[1]-1) in result_list:
+#         result_list.remove((temp[0],temp[1]-1))
+#         dir_search((temp[0],temp[1]-1))
+#     if (temp[0]+1,temp[1]) in result_list:
+#         result_list.remove((temp[0]+1,temp[1]))
+#         dir_search((temp[0]+1,temp[1]))
+#     if (temp[0],temp[1]+1) in result_list:
+#         result_list.remove((temp[0],temp[1]+1))
+#         dir_search((temp[0],temp[1]+1))
+#     else:
+#         return
+# final_list = []
+# final_count = 0
+# while len(result_list)>0:
+#     temp = result_list.pop(0)
+#     dir_search(temp)
+#     final_count+=1
+#     final_list.append(temp_count)
+#     temp_count = 0
+# print(final_count)
+# for i in sorted(final_list):
+#     print(i)
 
 
 # index_set = set()
@@ -57,9 +71,9 @@ for i in sorted(final_list):
 #         else:
 #             result_list.append([current_index])
 #     # index_set.add([current_index])
-    
+
 #     if current_index[0] == len(all_list)-1:
-#         return 
+#         return
 #     if current_index[1] == len(all_list[0])-1:
 #         return
 #     if all_list[current_index[0]][current_index[1]+1] == "1":
@@ -91,13 +105,10 @@ for i in sorted(final_list):
 #         temp_count = 0
 
 
-
-
-
 #     return
 # while len(sorted_index_set) > 0 :
 #     num_search(sorted_index_set.pop(0))
-    
+
 
 #     # if current_index[0]==0:
 
