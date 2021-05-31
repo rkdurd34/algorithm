@@ -58,13 +58,6 @@ print(result)
 #             visited[node] = True
 #             need_visit.extend(graph[node])
 #     return visited, result
-6 10
-0110000011
-1101111101
-1101010111
-1111010111
-0100111000
-1011110111
 
 # hooah, result = dfs(1, all_dict, visited)
 
