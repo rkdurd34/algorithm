@@ -19,7 +19,6 @@ def BFS(board, a, b, n):
 		print(-1) # 목적지 도달 못할시 -1 출력
 		return
 
-
 import sys
 n,m = list(map(int,sys.stdin.readline().strip()))
 
