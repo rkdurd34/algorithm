@@ -42,15 +42,12 @@ board = []
 big = 0
 for i in range(n):
     temp = list(map(int, sys.stdin.readline().split()))
-    a, b = temp
-    if big < a:
-        big = a
-    if big < b:
-        big = b
+
     board.append(temp)
-check = [False for _ in range(big+1)]
+
 
 board.sort(key=lambda x: (x[1], x[0]))
+
 result = 0
 end_time = 0
 for i in board:
