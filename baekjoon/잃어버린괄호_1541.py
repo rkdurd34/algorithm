@@ -19,12 +19,18 @@ status = False
 for i in range(len(dic)):
 
     temp = dic[i]
-    if status == False and temp == "-":
-        status = True
-        result -= num[i+1]
-    elif status == False and temp == "+":
+    # if status == False and temp == "-":
+    #     status = True
+    #     result -= num[i+1]
+    # elif status == False and temp == "+":
+    #     result += num[i+1]
+    # elif status == True and temp == "+" or temp == "-":
+    #     result -= num[i+1]
+    
+    if status == False and temp == "+":
         result += num[i+1]
-    elif status == True and temp == "+" or temp == "-":
-        result -= num[i+1]
+    else:
+        result-= num[i+1]
+        status = True
 
 print(result)
