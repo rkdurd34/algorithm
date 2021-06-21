@@ -4,7 +4,7 @@ V, E = list(map(int, sys.stdin.readline().split()))
 begin = int(sys.stdin.readline())
 graph = {}
 for i in range(V):
-    graph[i+1] = []
+    graph[i] = []
 for i in range(E):
     start, end, dist = list(map(int, sys.stdin.readline().split()))
     try:

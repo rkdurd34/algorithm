@@ -44,3 +44,4 @@ print(a.data)
 a.union(3, 4)
 
 print(a.data)
+
