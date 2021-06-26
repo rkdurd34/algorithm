@@ -20,7 +20,6 @@ def bfs():
         need_visit = [i]
 
         while need_visit:
-            # print(need_visit, i)
             temp_list = []
             for j in need_visit:
                 visited[j] = True
@@ -28,20 +27,13 @@ def bfs():
                     if visited[k] == False:
                         temp_list.append(k)
                         visited[k] = True
-                        # visited[k] = True
-                # temp_list.extend(board[j])
-
             count += 1
             need_visit = list(temp_list)
         score[i] = count
-    # print(score)
-
     min_score = min(score[1:])
-    # result = []
     order = []
     for i in range(1, len(score)):
         if score[i] == min_score:
-            # result.append(score[i])
             order.append(i)
     print(min_score, len(order))
     order.sort()

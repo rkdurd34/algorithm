@@ -41,13 +41,15 @@ def union(node_v, node_u):
 
     if rank[root1] > rank[root2]:
         parent[root2] = root1
-    else: # 부트리의 높이가 같은 경우에도 오른쪽 애를 뽑아서 상위로 올려버림
+    else:  # 부트리의 높이가 같은 경우에도 오른쪽 애를 뽑아서 상위로 올려버림
         parent[root1] = root2
         if rank[root1] == rank[root2]:
             rank[root2] += 1
 
 # 높이가 다른 부트리들끼리 합칠 때 상황
 #
+
+
 def make_set(node):
     parent[node] = node
     rank[node] = 0
@@ -60,7 +62,7 @@ def kruskal(graph):
 
     edges = graph['edges']
     edges.sort()
-
+    print(edges)
     for edge in edges:
         weight, node_v, node_u = edge
         if find(node_v) != find(node_u):
