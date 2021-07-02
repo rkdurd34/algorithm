@@ -1,4 +1,6 @@
 # 이분 탐색 검색 기준 -> 거리(답),비교 대상 좌표(상수)
+# 항상 답으로 나오는 기준으로 탐색 시도해보기
+# -> 최대 거리 -> 거리를 기준으로 고정된 값(집좌표)을 탐색
 import sys
 from itertools import combinations
 input = sys.stdin.readline
