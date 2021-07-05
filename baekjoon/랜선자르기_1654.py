@@ -12,12 +12,9 @@ while low <= high:
         temp = i // mid
         count += temp
     if count >= n:
-        # print(mid,'sya')
         low = mid + 1
         if result < mid:
             result = mid
-        # else:
-        #     break
     elif count > n:
         low = mid + 1
     elif count < n:
