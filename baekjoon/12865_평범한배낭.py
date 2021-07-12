@@ -7,7 +7,8 @@ for _ in range(num):
     check_list.append([0]*amount+[0])
 
 
-
+print(check_list)
+print(item_list)
 
 for i in range(1,len(check_list)):
     for j in range(1,len(check_list[i])):
@@ -15,6 +16,7 @@ for i in range(1,len(check_list)):
             check_list[i][j] =max(check_list[i-1][j],item_list[i][1]+check_list[i-1][j-item_list[i][0]])
         else:
             check_list[i][j] = check_list[i-1][j]
+    print(check_list)
 print(check_list[num][amount])
 # for i in range(1,len(check_list)):
 #     for j in range(len(check_list[i])):        

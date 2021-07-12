@@ -1,4 +1,4 @@
-
+# 이분 탐색 범위 줄이는 방법 질문 하기
 import sys
 from collections import defaultdict
 n, m = list(map(int, sys.stdin.readline().split()))
