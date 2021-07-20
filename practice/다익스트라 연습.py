@@ -8,14 +8,8 @@ def dijkstra(graph, start):
     queue = []
     heapq.heappush(queue, [distances[start], start])
     while queue:
-        print(queue)
-        print(distances)
-        print()
         current_distance, current_node = heapq.heappop(queue)
         if distances[current_node] < current_distance:
-            print(current_node)
-            print(distances[current_node], current_distance)
-            print('오는경우')
             continue
         for adjacent, weight in graph[current_node].items():
             distance = current_distance + weight

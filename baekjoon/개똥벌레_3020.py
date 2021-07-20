@@ -10,10 +10,14 @@ for i in range(n):
         down[temp] += 1
     else:  # 위
         up[temp] += 1
-
+print(up)
+print(down)
 for i in range(len(up)-2, -1, -1):
     up[i] += up[i+1]
     down[i] += down[i+1]
+
+print(up)
+print(down)
 
 low = 0
 high = h
@@ -26,8 +30,8 @@ for i in range(1, len(up)):
         result_min = temp_count
         result_count = 1
     elif temp_count == result_min:
-        result_count += 1 
-print(result_min,result_count)
+        result_count += 1
+print(result_min, result_count)
 
 
 # import sys
